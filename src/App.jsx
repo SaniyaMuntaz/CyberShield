@@ -7,7 +7,7 @@ import {
 } from 'lucide-react'
 import StatCard from './components/StatCard'
 import IncidentRow from './components/IncidentRow'
-
+const API_BASE_URL = 'https://cybershield-backend-4ugg.onrender.com'
 const demoIncidents = [
   {
     id: 1,
@@ -97,7 +97,7 @@ function App() {
     setAnalysis(null)
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/analyze', {
+      const response = await fetch('https://cybershield-backend-4ugg.onrender.com/analyze', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -142,7 +142,7 @@ function App() {
         .filter((item) => item.flagged)
         .map((item) => item.label)
 
-      const response = await fetch('http://127.0.0.1:8000/support', {
+      const response = await fetch('https://cybershield-backend-4ugg.onrender.com/support', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -185,7 +185,7 @@ function App() {
     setAgentPlan(null)
 
     try {
-      const mlResponse = await fetch('http://127.0.0.1:8000/analyze', {
+      const mlResponse = await fetch('https://cybershield-backend-4ugg.onrender.com/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: message }),
@@ -207,7 +207,7 @@ function App() {
         .filter((item) => item.flagged)
         .map((item) => item.label)
 
-      const response = await fetch('http://127.0.0.1:8000/agent/plan', {
+      const response = await fetch('https://cybershield-backend-4ugg.onrender.com/agent/plan', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
